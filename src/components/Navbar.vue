@@ -11,9 +11,11 @@
       data-target="navbar"
       arial-controls="#navbar"
       aria-label="navbar"
+      @click="toggleCollapse"
     />
     <navbar-collapse
       id="navbar"
+      :active="active"
     >
       <navbar-nav>
         <navbar-item

@@ -2,10 +2,9 @@
   <div
     :id= "id"
     class="collapse navbar-collapse"
+    :class="{show: active}"
   >
-
     <slot
-
     />
 
   </div>
@@ -18,6 +17,10 @@ export default {
     id: {
       type: [Number, String],
       default: ''
+    },
+    active: {
+      type: Boolean,
+      default: false
     }
   }
 }

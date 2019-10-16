@@ -2,8 +2,8 @@
  <div class="card">
     <img
       :src="src"
-      class="card-img-top"
-     :alt="alt"
+        class="card-img-top"
+      :alt="alt"
     >
 
     <div class="card-body">
