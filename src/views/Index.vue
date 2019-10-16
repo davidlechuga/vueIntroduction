@@ -1,24 +1,42 @@
 <template>
-    <div class=" index">
-        <navbar />
-    </div>
+  <div class="index">
+    <post-card-list
+      :posts="posts"
+    />
+  </div>
 </template>
 
 <script>
-import Navbar from '../components/Navbar'
+import PostCardList from '../components/PostCardList'
+import api from '../lib/api'
 
 export default {
   name: 'Index',
   components: {
-    Navbar
+    PostCardList
+  },
+  data () {
+    return {
+      posts: []
+    }
+  },
+  async mounted () {
+    const posts = await api.getPosts()
+
+    this.posts = posts.map((post) => ({
+      src: post.image,
+      alt: post.title,
+      title: post.title,
+      text: post.description,
+      butttonTo: `/post/${post._id}`,
+      buttonText: 'ver detalle'
+    }))
   }
 }
 </script>
 
 <style scoped>
-
 h1 {
-    color: red
+  color: red;
 }
-
 </style>

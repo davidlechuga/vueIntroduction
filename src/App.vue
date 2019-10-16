@@ -1,19 +1,20 @@
 <template>
-  <div id="app">
-    <index/>
+  <div id='app'>
+    <navbar />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Index from './views/Index'
+import Navbar from './components/Navbar'
 
 export default {
   name: 'App',
   components: {
-    Index
+    Navbar
   }
-
 }
+
 </script>
 
 <style>

@@ -1,28 +1,46 @@
 <template>
-<!-- As a heading -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <navbar-brand
-            text= "MediumClone"
-        />
-        <navbar-toggler
-        data-target="navbar"
-        arial-controls="#navbar"
-        aria-label="navbar"
-        />
-        <navbar-collapse id="navbar">
-          <navbar-nav>
-            <navbar-item>
-              <navbar-link
-                text="hola"
-                label="que onda"
-              />
-            </navbar-item>
-          </navbar-nav>
-        </navbar-collapse>
-    </nav>
+  <!-- As a heading -->
+  <nav
+   class="navbar navbar-expand-lg navbar-light bg-light"
+  >
+    <navbar-brand
+      text="MediumClone"
+    />
+
+    <navbar-toggler
+      data-target="navbar"
+      arial-controls="#navbar"
+      aria-label="navbar"
+    />
+    <navbar-collapse
+      id="navbar"
+    >
+      <navbar-nav>
+        <navbar-item
+          :active=" $route.path =='/' "
+        >
+          <navbar-link
+            text="All post"
+            label="go to home to view all post"
+            to="/"
+          />
+        </navbar-item>
+        <navbar-item
+          :active=" $route.path == '/new-post' "
+        >
+          <navbar-link
+            text="New post"
+            label="go to new post to creat "
+            to="/new-post"
+          />
+        </navbar-item>
+      </navbar-nav>
+    </navbar-collapse>
+  </nav>
 </template>
 
 <script>
+
 import NavbarBrand from './NavbarBrand'
 import NavbarToggler from './NavbarToggler'
 import NavbarCollapse from './NavbarCollapse'
@@ -40,8 +58,8 @@ export default {
     NavbarItem,
     NavbarLink
   }
-
 }
+
 </script>
 
 <style scoped>
